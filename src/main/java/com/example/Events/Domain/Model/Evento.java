@@ -33,4 +33,8 @@ public class Evento {
     @Getter
     @Setter
     Date fechaFin;
+
+    @Getter
+    @Setter
+    String modalidad;
 }
