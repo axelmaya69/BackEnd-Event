@@ -1,11 +1,10 @@
 package com.example.Events.Domain.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 public class Alumno {
@@ -26,6 +25,27 @@ public class Alumno {
     @Getter
     @Setter
     String apellidoM;
+
+    @Getter
+    @Setter
+    @OneToMany(mappedBy = "alumno")
+    private List<AlumnoTaller> AlumTall;
+
+    @Getter
+    @Setter
+    @OneToMany(mappedBy = "alumno")
+    private List<AlumnoConferencia> AlumConf;
+
+    @Getter
+    @Setter
+    @OneToMany(mappedBy = "alumno")
+    private List<Comentario> AlumCom;
+
+    @Getter
+    @Setter
+    @OneToMany(mappedBy = "alumno")
+    private List<MeGusta> AlumMeg;
+
 
 }
 
