@@ -1,4 +1,7 @@
 package com.example.Events.Domain.Repository;
 
-public interface IAlumno {
+import com.example.Events.Domain.Model.Alumno;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface IAlumno extends JpaRepository<Integer, Alumno> {
 }
