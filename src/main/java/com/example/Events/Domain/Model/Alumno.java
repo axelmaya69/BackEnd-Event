@@ -35,12 +35,12 @@ public class Alumno {
     @Getter
     @Setter
     @OneToMany(mappedBy = "alumno")
-    private List<AlumnoTaller> AlumTall;
+    private List<InscripcionTaller> AlumTall;
 
     @Getter
     @Setter
     @OneToMany(mappedBy = "alumno")
-    private List<AlumnoConferencia> AlumConf;
+    private List<InscripcionConferencia> AlumConf;
 
     @Getter
     @Setter
