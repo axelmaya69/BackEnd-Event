@@ -26,6 +26,12 @@ public class Alumno {
     @Setter
     String apellidoM;
 
+
+    @Getter
+    @Setter
+    String numeroDeControl;
+
+
     @Getter
     @Setter
     @OneToMany(mappedBy = "alumno")
