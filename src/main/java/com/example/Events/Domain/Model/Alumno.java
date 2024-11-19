@@ -42,11 +42,6 @@ public class Alumno {
     @OneToMany(mappedBy = "alumno")
     private List<InscripcionConferencia> AlumConf;
 
-    @Getter
-    @Setter
-    @OneToMany(mappedBy = "alumno")
-    private List<Comentario> AlumCom;
-
  
 
 
