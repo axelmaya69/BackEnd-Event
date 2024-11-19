@@ -31,6 +31,13 @@ public class Alumno {
     @Setter
     String numeroDeControl;
 
+    @Getter
+    @Setter
+    String usuario;
+
+    @Getter
+    @Setter
+    String password;
 
     @Getter
     @Setter
@@ -42,7 +49,7 @@ public class Alumno {
     @OneToMany(mappedBy = "alumno")
     private List<InscripcionConferencia> AlumConf;
 
- 
+
 
 
 }
