@@ -1,9 +1,6 @@
 package com.example.Events.Domain.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,5 +23,15 @@ public class Taller {
     @Getter
     @Setter
     String materiales;
+
+    @Getter
+    @Setter
+    String fK_exponente;
+
+    @Getter
+    @Setter
+    String tipoAcceso;
+
+
 
 }
