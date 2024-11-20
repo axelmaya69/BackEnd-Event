@@ -29,7 +29,7 @@ public class Taller {
     String fK_exponente;
 
     @Getter
-    cd@Setter
+    @Setter
     String tipoAcceso;
 
 
