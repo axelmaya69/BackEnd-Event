@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Date;
+
 @Entity
 public class Taller {
     @Id
@@ -26,11 +28,12 @@ public class Taller {
 
     @Getter
     @Setter
-    String fK_exponente;
+    Date fechaInicio;
 
     @Getter
     @Setter
-    String tipoAcceso;
+    Date fechaFin;
+
 
 
 

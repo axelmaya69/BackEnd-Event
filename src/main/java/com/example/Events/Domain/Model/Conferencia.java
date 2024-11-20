@@ -7,6 +7,8 @@ import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Date;
+
 @Entity
 public class Conferencia {
     @Id
@@ -23,5 +25,15 @@ public class Conferencia {
     @Getter
     @Setter
     String descripcion;
+
+    @Getter
+    @Setter
+    Date fechaInicio;
+
+    @Getter
+    @Setter
+    Date fechaFin;
+
+
 
 }
