@@ -40,6 +40,6 @@ public class Evento {
 
     @Getter
     @Setter
-    int fkOtros;
+    int fkOtroEvento;
 
 }
