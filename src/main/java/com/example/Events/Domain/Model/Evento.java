@@ -20,14 +20,6 @@ public class Evento {
 
     @Getter
     @Setter
-    String nombre;
-
-    @Getter
-    @Setter
-    String descripcion;
-
-    @Getter
-    @Setter
     Date fechaInicio;
 
     @Getter
@@ -36,5 +28,18 @@ public class Evento {
 
     @Getter
     @Setter
-    String modalidad;
+    int fkLugar;
+
+    @Getter
+    @Setter
+    int fkTaller;
+
+    @Getter
+    @Setter
+    int fkConferencia;
+
+    @Getter
+    @Setter
+    int fkOtros;
+    
 }
