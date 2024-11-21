@@ -7,10 +7,9 @@ import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
-
 @Entity
-public class Conferencia {
+public class Paquete {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter
@@ -19,17 +18,5 @@ public class Conferencia {
 
     @Getter
     @Setter
-    String nombre;
-
-
-    @Getter
-    @Setter
-    String descripcion;
-
-    @Getter
-    @Setter
-    int fkExponente;
-
-
-
+    String tipo;
 }
