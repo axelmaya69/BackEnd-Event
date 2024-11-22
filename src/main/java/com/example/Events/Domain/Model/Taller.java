@@ -13,24 +13,24 @@ public class Taller {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter
     @Setter
-    int id;
+    private int id;
 
     @Getter
     @Setter
-    String nombre;
+    private String nombre;
 
     @Getter
     @Setter
-    String descripcion;
+    private String descripcion;
 
     @Getter
     @Setter
-    String materiales;
+    private String materiales;
 
     @ManyToOne
     @JoinColumn(name = "id_exponente")
     private Exponente exponente;
-    
+
 
 
 

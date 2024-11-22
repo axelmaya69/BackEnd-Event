@@ -14,23 +14,23 @@ public class Docente {
     @GeneratedValue(strategy = GenerationType.AUTO )
     @Setter
     @Getter
-    int id;
+    private int id;
 
     @Getter
     @Setter
-    String nombre;
+    private String nombre;
 
     @Getter
     @Setter
-    String apellidoP;
+    private String apellidoP;
 
     @Getter
     @Setter
-    String apellidoM;
+    private String apellidoM;
 
     @Getter
     @Setter
-    String numeroControl;
+    private String numeroControl;
 
 
 

@@ -15,13 +15,13 @@ public class Administrador {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter
     @Setter
-    int id;
+    private int id;
 
     @Getter
     @Setter
-    String rol;
+    private String rol;
 
     @Getter
     @Setter
-    String nombre;
+    private String nombre;
 }

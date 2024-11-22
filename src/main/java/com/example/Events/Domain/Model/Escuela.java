@@ -14,11 +14,11 @@ public class Escuela {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter
     @Setter
-    int id;
+    private int id;
 
     @Getter
     @Setter
-    String nombre;
+    private String nombre;
 
 
 }

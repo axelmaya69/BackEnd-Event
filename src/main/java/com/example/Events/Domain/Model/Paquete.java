@@ -14,9 +14,9 @@ public class Paquete {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter
     @Setter
-    int id;
+    private int id;
 
     @Getter
     @Setter
-    String tipo;
+    private String tipo;
 }
