@@ -46,6 +46,6 @@ public class Alumno {
     @OneToOne
     private Escuela universidad;
 
-    
+
 }
 
