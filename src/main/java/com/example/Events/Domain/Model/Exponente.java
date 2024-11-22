@@ -35,9 +35,9 @@ public class Exponente {
     String descripcion;
 
     @OneToMany(mappedBy = "exponente")
-    private List<Taller> taller;
+    private List<Taller> talleres;
 
 
     @OneToMany(mappedBy = "exponente")
-    private List<Conferencia> conferencia;
+    private List<Conferencia> conferencias;
 }
