@@ -12,27 +12,27 @@ public class Exponente {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter
     @Setter
-    int id;
+    private int id;
 
     @Getter
     @Setter
-    String nombre;
+    private String nombre;
 
     @Getter
     @Setter
-    String apellidoP;
+    private String apellidoP;
 
     @Getter
     @Setter
-    String apellidoM;
+    private String apellidoM;
 
     @Getter
     @Setter
-    String correoElectronico;
+    private String correoElectronico;
 
     @Getter
     @Setter
-    String descripcion;
+    private String descripcion;
 
     @OneToMany(mappedBy = "exponente")
     private List<Taller> talleres;
