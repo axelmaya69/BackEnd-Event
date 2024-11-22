@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 @Entity
@@ -26,14 +27,10 @@ public class Taller {
     @Setter
     String materiales;
 
-    @Getter
-    @Setter
-    Date fechaInicio;
-
-    @Getter
-    @Setter
-    Date fechaFin;
-
+    @ManyToOne
+    @JoinColumn(name = "id_exponente")
+    private Exponente exponente;
+    
 
 
 
