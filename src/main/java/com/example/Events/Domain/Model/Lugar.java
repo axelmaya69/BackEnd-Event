@@ -13,10 +13,10 @@ public class Lugar {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter
     @Setter
-    int id;
+    private int id;
 
 
     @Getter
-    @SetterO
-    String lugar;
+    @Setter
+    private String lugar;
 }
