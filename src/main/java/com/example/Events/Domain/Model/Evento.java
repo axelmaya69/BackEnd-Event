@@ -16,30 +16,15 @@ public class Evento {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Getter
     @Setter
-    int id;
+    private int id;
 
     @Getter
     @Setter
-    Date fechaInicio;
+    private Date fechaInicio;
 
     @Getter
     @Setter
-    Date fechaFin;
+    private Date fechaFin;
 
-    @Getter
-    @Setter
-    int fkLugar;
-
-    @Getter
-    @Setter
-    int fkTaller;
-
-    @Getter
-    @Setter
-    int fkConferencia;
-
-    @Getter
-    @Setter
-    int fkOtroEvento;
 
 }
