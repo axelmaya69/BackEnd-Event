@@ -12,45 +12,40 @@ public class Alumno {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Setter
     @Getter
-    int id;
+    private int id;
 
     @Getter
     @Setter
-    String nombre;
+    private String nombre;
 
     @Getter
     @Setter
-    String apellidoP;
+    private String apellidoP;
 
     @Getter
     @Setter
-    String apellidoM;
+    private String apellidoM;
 
 
     @Getter
     @Setter
-    String numeroDeControl;
+    private String numeroDeControl;
 
     @Getter
     @Setter
-    String usuario;
+    private String usuario;
 
     @Getter
     @Setter
-    String password;
-
-    @Getter
-    @Setter
-    @OneToMany(mappedBy = "alumno")
-    private List<InscripcionTaller> AlumTall;
-
-    @Getter
-    @Setter
-    @OneToMany(mappedBy = "alumno")
-    private List<InscripcionConferencia> AlumConf;
+    private String password;
 
 
+    @OneToOne
+    private Paquete paquete;
 
+    @OneToOne
+    private Escuela universidad;
 
+    
 }
 
