@@ -32,6 +32,12 @@ public class Docente {
     @Setter
     private String numeroControl;
 
+    @Getter
+    @Setter
+    private String usuario;
 
+    @Getter
+    @Setter
+    private String password;
 
 }
