@@ -3,7 +3,7 @@ package com.example.Events.Domain.Model;
 import jakarta.persistence.*;
 
 @Entity
-public class InscripcionConferencia {
+public class AlumnoConferencia {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
