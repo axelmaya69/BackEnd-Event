@@ -46,6 +46,11 @@ public class Alumno {
     @OneToOne
     private Escuela universidad;
 
+    @OneToMany(mappedBy = "alumno")
+    private List<AlumnoConferencia> alumnosConferencia;
+
+    @OneToMany(mappedBy = "alumno")
+    private List<AlumnoTaller> alumnosTaller;
 
 }
 
