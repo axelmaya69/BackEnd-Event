@@ -1,11 +1,11 @@
 package com.example.Events.Domain.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.Date;
+import java.util.List;
 
 @Entity
 public class OtroEvento {
@@ -23,4 +23,22 @@ public class OtroEvento {
     @Setter
     private String descripcion;
 
+    @Getter
+    @Setter
+    private Date fechaInicio;
+
+    @Getter
+    @Setter
+    private Date fechaFin;
+
+    @Getter
+    @Setter
+    @ManyToOne
+    private Lugar lugar;
+
+    @Getter
+    @Setter
+    @ManyToOne
+    private Evento evento;
 }
+

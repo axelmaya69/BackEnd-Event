@@ -4,8 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Taller {
@@ -27,10 +27,37 @@ public class Taller {
     @Setter
     private String materiales;
 
+    @Getter
+    @Setter
+    private Date fechaInicio;
+
+    @Getter
+    @Setter
+    private Date fechaFin;
+
     @ManyToOne
     @JoinColumn(name = "id_exponente")
     private Exponente exponente;
 
+    @ManyToOne
+    @JoinColumn(name = "id_paquete")
+    private Paquete paquete;
+
+    @OneToMany(mappedBy = "taller")
+    private List<AlumnoTaller> alumnosTaller;
+
+    @OneToMany(mappedBy = "taller")
+    private List<DocenteTaller> docenteTaller;
+
+    @Getter
+    @Setter
+    @ManyToOne
+    private Lugar lugar;
+
+    @Getter
+    @Setter
+    @ManyToOne
+    private Evento evento;
 
 
 
