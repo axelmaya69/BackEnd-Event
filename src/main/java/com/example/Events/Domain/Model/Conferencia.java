@@ -19,18 +19,10 @@ public class Conferencia {
     @Setter
     private String nombre;
 
-
     @Getter
     @Setter
     private String descripcion;
 
-    @Getter
-    @Setter
-    private Date fechaInicio;
-
-    @Getter
-    @Setter
-    private Date fechaFin;
 
 
     @ManyToOne
@@ -47,6 +39,7 @@ public class Conferencia {
     @OneToMany(mappedBy = "conferencia")
     private List<DocenteConferencia> docenteConferencia;
 
+
     @Getter
     @Setter
     @ManyToOne
@@ -57,4 +50,8 @@ public class Conferencia {
     @ManyToOne
     private Evento evento;
 
+    @Getter
+    @Setter
+    @ManyToOne
+    private Informacion informacion;
 }

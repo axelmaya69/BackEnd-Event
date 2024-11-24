@@ -27,13 +27,7 @@ public class Taller {
     @Setter
     private String materiales;
 
-    @Getter
-    @Setter
-    private Date fechaInicio;
 
-    @Getter
-    @Setter
-    private Date fechaFin;
 
     @ManyToOne
     @JoinColumn(name = "id_exponente")
@@ -53,6 +47,11 @@ public class Taller {
     @Setter
     @ManyToOne
     private Lugar lugar;
+
+    @Getter
+    @Setter
+    @ManyToOne
+    private Informacion informacion;
 
     @Getter
     @Setter

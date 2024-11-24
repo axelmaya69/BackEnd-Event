@@ -20,10 +20,10 @@ public class Paquete {
     private String tipo;
 
 
-    @OneToMany(mappedBy = "taller")
+    @OneToMany(mappedBy = "paquete")
     private List<Taller> talleres;
 
-    @OneToMany(mappedBy = "conferencia")
+    @OneToMany(mappedBy = "paquete")
     private List<Conferencia> conferencias;
 
 }
