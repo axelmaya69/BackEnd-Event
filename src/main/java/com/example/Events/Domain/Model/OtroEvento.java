@@ -23,13 +23,7 @@ public class OtroEvento {
     @Setter
     private String descripcion;
 
-    @Getter
-    @Setter
-    private Date fechaInicio;
 
-    @Getter
-    @Setter
-    private Date fechaFin;
 
     @Getter
     @Setter
@@ -40,5 +34,10 @@ public class OtroEvento {
     @Setter
     @ManyToOne
     private Evento evento;
+
+    @Getter
+    @Setter
+    @ManyToOne
+    private Informacion informacion;
 }
 
