@@ -1,4 +1,4 @@
 package com.example.Events.Aplication.Service;
 
-public class ExponenteServiceImplementation i{
+public class ExponenteServiceImplementation {
 }
