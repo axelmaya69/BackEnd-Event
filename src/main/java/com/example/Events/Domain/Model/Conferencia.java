@@ -27,16 +27,24 @@ public class Conferencia {
 
     @ManyToOne
     @JoinColumn(name = "id_exponente")
+    @Getter
+    @Setter
     private Exponente exponente;
 
     @ManyToOne
     @JoinColumn(name = "id_paquete")
+    @Getter
+    @Setter
     private Paquete paquete;
 
     @OneToMany(mappedBy = "conferencia")
+    @Getter
+    @Setter
     private List<AlumnoConferencia> alumnosConferencia;
 
     @OneToMany(mappedBy = "conferencia")
+    @Getter
+    @Setter
     private List<DocenteConferencia> docenteConferencia;
 
 
