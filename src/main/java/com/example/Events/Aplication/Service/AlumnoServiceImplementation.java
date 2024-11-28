@@ -51,6 +51,7 @@ public class AlumnoServiceImplementation implements IAlumnoService {
             updateAlumno.setNumeroDeControl(alumno.getNumeroDeControl());
             updateAlumno.setUsuario(alumno.getUsuario());
             updateAlumno.setPassword(alumno.getPassword());
+            
         return aluRepo.save(updateAlumno);
         }
         return null;
