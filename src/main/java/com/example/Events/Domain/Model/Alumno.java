@@ -41,15 +41,23 @@ public class Alumno {
 
 
     @OneToOne
+    @Getter
+    @Setter
     private Paquete paquete;
 
     @OneToOne
+    @Getter
+    @Setter
     private Escuela universidad;
 
     @OneToMany(mappedBy = "alumno")
+    @Getter
+    @Setter
     private List<AlumnoConferencia> alumnosConferencia;
 
     @OneToMany(mappedBy = "alumno")
+    @Getter
+    @Setter
     private List<AlumnoTaller> alumnosTaller;
 
 }
