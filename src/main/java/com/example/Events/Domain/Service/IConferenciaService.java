@@ -10,7 +10,7 @@ public interface IConferenciaService {
     Conferencia crearConferencia (Conferencia conferencia);
     Conferencia obtenerConferencia(int id);
     List<Conferencia> obtenerConferencias();
-    List<Conferencia> obtenerPorNombre(String Conferencia);
+    List<Conferencia> obtenerPorNombre(String conferencia);
     Conferencia actualizarConferencia(int id, Conferencia conferencia);
     void eliminarConferencia(int id);
 }

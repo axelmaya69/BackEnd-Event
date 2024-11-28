@@ -21,9 +21,13 @@ public class Paquete {
 
 
     @OneToMany(mappedBy = "paquete")
+    @Getter
+    @Setter
     private List<Taller> talleres;
 
     @OneToMany(mappedBy = "paquete")
+    @Getter
+    @Setter
     private List<Conferencia> conferencias;
 
 }

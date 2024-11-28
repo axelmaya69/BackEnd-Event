@@ -12,6 +12,8 @@ public class Informacion{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Getter
+    @Setter
     private int id;
 
     @Getter
@@ -23,12 +25,18 @@ public class Informacion{
     private Date fechaFin;
 
     @OneToMany(mappedBy = "informacion")
+    @Getter
+    @Setter
     private List<Conferencia> conferencias;
 
     @OneToMany(mappedBy = "informacion")
+    @Getter
+    @Setter
     private List<Taller> talleres;
 
     @OneToMany(mappedBy = "informacion")
+    @Getter
+    @Setter
     private List<OtroEvento> otrosEventos;
 
 }

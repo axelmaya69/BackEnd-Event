@@ -31,16 +31,24 @@ public class Taller {
 
     @ManyToOne
     @JoinColumn(name = "id_exponente")
+    @Getter
+    @Setter
     private Exponente exponente;
 
     @ManyToOne
     @JoinColumn(name = "id_paquete")
+    @Getter
+    @Setter
     private Paquete paquete;
 
     @OneToMany(mappedBy = "taller")
+    @Getter
+    @Setter
     private List<AlumnoTaller> alumnosTaller;
 
     @OneToMany(mappedBy = "taller")
+    @Getter
+    @Setter
     private List<DocenteTaller> docenteTaller;
 
     @Getter

@@ -35,9 +35,13 @@ public class Exponente {
     private String descripcion;
 
     @OneToMany(mappedBy = "exponente")
+    @Getter
+    @Setter
     private List<Taller> talleres;
 
 
     @OneToMany(mappedBy = "exponente")
+    @Getter
+    @Setter
     private List<Conferencia> conferencias;
 }
