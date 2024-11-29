@@ -44,12 +44,13 @@ public class ConferenciaServiceImplementation implements IConferenciaService {
         if(conferenciaRepo.existsById(id)){
             updateConferencia.setNombre(conferencia.getNombre());
             updateConferencia.setDescripcion(conferencia.getDescripcion());
-            updateConferencia.setLugar(conferencia.getLugar());
+            return conferenciaRepo.save(updateConferencia);
         }
+        return null;
     }
 
     @Override
     public void eliminarConferencia(int id) {
-
+    conferenciaRepo.deleteById(id);
     }
 }
