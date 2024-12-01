@@ -34,7 +34,7 @@ public class LugarServiceImplementation implements ILugarService {
 
     @Override
     public List<Lugar> obtenerPorNombre(String lugar) {
-        return lugarRep.findByNombreContaining(lugar);
+        return lugarRep.findByLugarContaining(lugar);
     }
 
     @Override

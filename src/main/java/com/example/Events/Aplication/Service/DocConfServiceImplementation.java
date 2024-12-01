@@ -34,10 +34,7 @@ public class DocConfServiceImplementation implements IDocenteConferenciaService 
         return doConfRepo.findAll();
     }
 
-    @Override
-    public List<DocenteConferencia> obtenerPorNombre(String docenteConferencia) {
-        return doConfRepo.findByNombreContaining(docenteConferencia);
-    }
+
 
     @Override
     public DocenteConferencia actualizarDocenteConferencia(int id, DocenteConferencia docenteConferencia) {

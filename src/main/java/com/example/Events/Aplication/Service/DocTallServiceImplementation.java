@@ -34,10 +34,6 @@ public class DocTallServiceImplementation implements IDocenteTallerService {
         return docTallRep.findAll();
     }
 
-    @Override
-    public List<DocenteTaller> obtenerPorNombre(String docenteTaller) {
-        return docTallRep.findByNombreContaining(docenteTaller);
-    }
 
     @Override
     public DocenteTaller actualizarDocenteTaller(int id, DocenteTaller docenteTaller) {

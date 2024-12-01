@@ -34,11 +34,6 @@ public class InformacionServiceImplementation implements IInformacionService {
     }
 
     @Override
-    public List<Informacion> obtenerPorNombre(String informacion) {
-        return infoRep.findByNombreContaining(informacion);
-    }
-
-    @Override
     public Informacion actualizarInformacion(int id, Informacion informacion) {
         Informacion updateInformacion = infoRep.findById(id).get();
         if(infoRep.existsById(id)){

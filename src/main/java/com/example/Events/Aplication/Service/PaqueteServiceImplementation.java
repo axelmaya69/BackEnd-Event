@@ -35,7 +35,7 @@ public class PaqueteServiceImplementation implements IPaqueteService {
 
     @Override
     public List<Paquete> obtenerPorNombre(String paquete) {
-        return paqRep.findByNombreContaining(paquete);
+        return paqRep.findByTipoContaining(paquete);
     }
 
     @Override

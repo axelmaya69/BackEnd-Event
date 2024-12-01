@@ -34,10 +34,7 @@ public class AluTallServiceImplementation implements IAlumnoTallerService {
         return aluTallRep.findAll();
     }
 
-    @Override
-    public List<AlumnoTaller> obtenerPorNombre(String alumnotaller) {
-        return aluTallRep.findByNombreContaining(alumnotaller);
-    }
+
 
     @Override
     public AlumnoTaller actualizarAlumnoTaller(int id, AlumnoTaller alumnotaller) {

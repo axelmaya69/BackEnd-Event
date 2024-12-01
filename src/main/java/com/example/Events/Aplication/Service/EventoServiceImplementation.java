@@ -34,10 +34,6 @@ public class EventoServiceImplementation implements IEventoService {
         return eventoRep.findAll();
     }
 
-    @Override
-    public List<Evento> obtenerPorNombre(String evento) {
-        return eventoRep.findByNombreContaining(evento);
-    }
 
     @Override
     public Evento actualizarEvento(int id, Evento evento) {
