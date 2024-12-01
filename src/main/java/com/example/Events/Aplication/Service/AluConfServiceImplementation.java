@@ -35,10 +35,7 @@ public class AluConfServiceImplementation implements IAlumnoConferenciaService {
         return aluconfRep.findAll();
     }
 
-    @Override
-    public List<AlumnoConferencia> obtenerPorNombre(String alumnoConferencia) {
-        return aluconfRep.findByNombreContaining(alumnoConferencia);
-    }
+
 
     @Override
     public AlumnoConferencia actualizarAlumnoConferencia(int id, AlumnoConferencia alumnoConferencia) {
