@@ -10,7 +10,7 @@ public interface IInformacionService {
     Informacion crearInformacion(Informacion informacion);
     Informacion obtenerInformacion(int id);
     List<Informacion> obtenerInformaciones();
-    List<Informacion> obtenerPorNombre(String informacion);
+
     Informacion actualizarInformacion(int id, Informacion informacion);
     void eliminarInformacion(int id);
 }

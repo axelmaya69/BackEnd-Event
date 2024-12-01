@@ -11,7 +11,6 @@ public interface IDocenteConferenciaService {
     DocenteConferencia crearDocenteConferencia (DocenteConferencia docenteConferencia);
     DocenteConferencia obtenerDocenteConferencia(int id);
     List<DocenteConferencia> obtenerDocenteConferencias();
-    List<DocenteConferencia> obtenerPorNombre(String docenteConferencia);
     DocenteConferencia actualizarDocenteConferencia(int id, DocenteConferencia docenteConferencia);
     void eliminarDocenteConferencia(int id);
 }

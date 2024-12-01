@@ -9,5 +9,4 @@ import java.util.List;
 
 @Repository
 public interface IInformacion extends JpaRepository<Informacion , Integer> {
-    List<Informacion> findByNombreContaining(String nombreInformacion);
 }

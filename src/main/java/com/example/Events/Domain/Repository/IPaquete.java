@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface IPaquete extends JpaRepository< Paquete , Integer> {
-    List<Paquete> findByNombreContaining(String nombrePaquete);
+    List<Paquete> findByTipoContaining(String nombrePaquete);
 
 }

@@ -10,7 +10,6 @@ public interface IAlumnoConferenciaService {
     AlumnoConferencia crearAlumnoConferencia (AlumnoConferencia alumnoConferencia);
     AlumnoConferencia obtenerAlumnoConferencia(int id);
     List<AlumnoConferencia> obtenerAlumnosConferencias();
-    List<AlumnoConferencia> obtenerPorNombre(String alumnoConferencia);
     AlumnoConferencia actualizarAlumnoConferencia(int id,AlumnoConferencia alumnoConferencia);
     void eliminarAlumnoConferencia(int id);
 
