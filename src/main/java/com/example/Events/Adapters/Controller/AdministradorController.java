@@ -77,4 +77,6 @@ public class AdministradorController {
                     " inténtelo más tarde");
         }
     }
+    @DeleteMapping("delete/{id}")
+    
 }
