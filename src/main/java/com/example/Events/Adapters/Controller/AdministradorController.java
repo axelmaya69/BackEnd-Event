@@ -78,5 +78,9 @@ public class AdministradorController {
         }
     }
     @DeleteMapping("delete/{id}")
-    
+    public ResponseEntity<String> deleteAdmin(@PathVariable int id){
+        try{
+            
+        }
+    }
 }
