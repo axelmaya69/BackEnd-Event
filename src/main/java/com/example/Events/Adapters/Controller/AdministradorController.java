@@ -82,6 +82,9 @@ public class AdministradorController {
         try{
             administradorService.eliminarAdministrador(id);
             return ResponseEntity.status(HttpStatus.CREATED).body("Eliminado exitosamente");
+        }catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error" +
+                    " inténtelo más tarde.");
         }
     }
 }
