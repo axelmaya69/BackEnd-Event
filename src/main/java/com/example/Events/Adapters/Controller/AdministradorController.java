@@ -66,4 +66,11 @@ public class AdministradorController {
                     " inténtelo más tarde");
         }
     }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<String> updateAdmin (@PathVariable int id, @RequestBody Administrador admin){
+        try{
+            
+        }
+    }
 }
