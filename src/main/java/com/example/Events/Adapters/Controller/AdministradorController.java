@@ -70,7 +70,8 @@ public class AdministradorController {
     @PutMapping("/update/{id}")
     public ResponseEntity<String> updateAdmin (@PathVariable int id, @RequestBody Administrador admin){
         try{
-            
+            Administrador updateAdmin = administradorService.actualizarAdministrador(id, admin);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Editado con éxito");
         }
     }
 }
