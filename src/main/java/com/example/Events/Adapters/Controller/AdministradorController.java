@@ -80,7 +80,8 @@ public class AdministradorController {
     @DeleteMapping("delete/{id}")
     public ResponseEntity<String> deleteAdmin(@PathVariable int id){
         try{
-            
+            administradorService.eliminarAdministrador(id);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Eliminado exitosamente");
         }
     }
 }
