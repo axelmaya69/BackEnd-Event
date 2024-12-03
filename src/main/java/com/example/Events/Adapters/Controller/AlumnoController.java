@@ -4,6 +4,7 @@ package com.example.Events.Adapters.Controller;
 import com.example.Events.Domain.Model.Alumno;
 import com.example.Events.Domain.Service.IAlumnoService;
 import org.springframework.dao.DataAccessException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -49,7 +50,25 @@ public class AlumnoController {
     @PostMapping("/post")
     public ResponseEntity<?> postAlumno(@RequestBody Alumno alumno){
         try{
-            
+            Alumno postAlumno = alumnoService.crearAlumno(alumno);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Alumno creado exitosamente");
+        }
+        catch (DataIntegrityViolationException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("El registro ya existe!");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error" +
+                    " inténtelo más tarde");
+        }
+    }
+
+    @PutMapping("/put")
+    public ResponseEntity<?> putAlumno(@PathVariable int id, @RequestBody Alumno alumno){
+        try{
+            Alumno putAlumnoController = alumnoService.actualizarAlumno(id,alumno);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Editado con éxito");
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error" +
+                    " inténtelo más tarde");
         }
     }
 
