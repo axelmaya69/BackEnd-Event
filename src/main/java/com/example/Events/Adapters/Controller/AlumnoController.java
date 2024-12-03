@@ -47,6 +47,20 @@ public class AlumnoController {
                     .body("Error, inténtelo más tarde.");
         }
     }
+
+
+    @GetMapping("/getByName")
+    public ResponseEntity<?> getByName(@RequestParam String nombreAlumno){
+        try{
+            List<Alumno> getAlumnoByName = alumnoService.obtenerPorNombre(nombreAlumno);
+            return ResponseEntity.ok(getAlumnoByName);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error, inténtelo más tarde.");
+        }
+    }
+
+
     @PostMapping("/post")
     public ResponseEntity<?> postAlumno(@RequestBody Alumno alumno){
         try{
@@ -61,7 +75,7 @@ public class AlumnoController {
         }
     }
 
-    @PutMapping("/put")
+    @PutMapping("/put/{id}")
     public ResponseEntity<?> putAlumno(@PathVariable int id, @RequestBody Alumno alumno){
         try{
             Alumno putAlumnoController = alumnoService.actualizarAlumno(id,alumno);
@@ -72,7 +86,7 @@ public class AlumnoController {
         }
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteAlumno(@PathVariable int id){
         try{
             alumnoService.eliminarAlumno(id);
