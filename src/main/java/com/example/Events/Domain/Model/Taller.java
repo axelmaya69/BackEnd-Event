@@ -17,6 +17,7 @@ public class Taller {
 
     @Getter
     @Setter
+    @Column(unique = true)
     private String nombre;
 
     @Getter

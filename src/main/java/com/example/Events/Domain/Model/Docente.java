@@ -29,10 +29,12 @@ public class Docente {
 
     @Getter
     @Setter
+    @Column(unique = true)
     private String numeroControl;
 
     @Getter
     @Setter
+    @Column(unique = true)
     private String usuario;
 
     @Getter

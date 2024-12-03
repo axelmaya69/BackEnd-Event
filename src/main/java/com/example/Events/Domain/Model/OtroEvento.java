@@ -17,6 +17,7 @@ public class OtroEvento {
 
     @Getter
     @Setter
+    @Column(unique = true)
     private String nombre;
 
     @Getter

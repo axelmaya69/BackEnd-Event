@@ -17,6 +17,7 @@ public class Lugar {
 
     @Getter
     @Setter
+    @Column(unique = true)
     private String lugar;
 
     @Getter

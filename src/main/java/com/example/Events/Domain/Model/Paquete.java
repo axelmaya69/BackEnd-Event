@@ -17,6 +17,7 @@ public class Paquete {
 
     @Getter
     @Setter
+    @Column(unique = true)
     private String tipo;
 
 
