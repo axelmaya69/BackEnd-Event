@@ -29,10 +29,12 @@ public class Alumno {
 
     @Getter
     @Setter
+    @Column(unique = true)
     private String numeroDeControl;
 
     @Getter
     @Setter
+    @Column(unique = true)
     private String usuario;
 
     @Getter
