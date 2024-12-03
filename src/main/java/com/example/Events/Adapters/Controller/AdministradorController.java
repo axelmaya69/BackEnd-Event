@@ -60,7 +60,7 @@ public class AdministradorController {
             Administrador postAdministrador = administradorService.crearAdministrador(administrador);
             return ResponseEntity.status(HttpStatus.CREATED).body("Creado con éxito");
         }catch (DataIntegrityViolationException e) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Producto ya existe!");
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Administrador ya existe!");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error" +
                     " inténtelo más tarde");
