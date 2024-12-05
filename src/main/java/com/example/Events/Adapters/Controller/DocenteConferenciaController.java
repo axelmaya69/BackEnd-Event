@@ -64,7 +64,18 @@ public class DocenteConferenciaController {
                     " inténtelo más tarde");
         }
     }
-    
+
+    @PutMapping("/put/{id}")
+    public ResponseEntity<?> putDoConf(@PathVariable int id, @RequestBody DocenteConferencia docenteConferencia){
+        try{
+            DocenteConferencia updateDocenteConferencia = docenteConferenciaService.actualizarDocenteConferencia(id,docenteConferencia);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Editado con exito");
+        }
+        catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error" +
+                    " inténtelo más tarde");
+        }
+    }
 
 
 }
