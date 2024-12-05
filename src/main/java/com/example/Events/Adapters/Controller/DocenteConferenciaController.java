@@ -7,6 +7,7 @@ import com.example.Events.Domain.Service.IDocenteConferenciaService;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -77,5 +78,15 @@ public class DocenteConferenciaController {
         }
     }
 
-
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteDoConf(@PathVariable int id){
+        try{
+            docenteConferenciaService.eliminarDocenteConferencia(id);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Eliminado con éxito");
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error" +
+                    " inténtelo más tarde.");
+        }
+    }
 }
