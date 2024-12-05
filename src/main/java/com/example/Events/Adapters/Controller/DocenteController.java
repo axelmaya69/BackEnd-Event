@@ -86,7 +86,17 @@ public class DocenteController {
                 " inténtelo más tarde");
         }
     }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteDocente(@PathVariable int id){
+        try{
+            docenteService.eliminarDocente(id);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Eliminado con éxito");
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error" +
+                    " inténtelo más tarde.");
+        }
+    }
     
-
-
 }
