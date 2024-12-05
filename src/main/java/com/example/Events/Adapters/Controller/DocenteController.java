@@ -47,5 +47,19 @@ public class DocenteController {
         }
     }
 
+    @GetMapping("/getByName")
+    public ResponseEntity<?> getByName(@RequestParam String nombreDocente){
+        try{
+            List<Docente> getDocente = docenteService.obtenerPorNombre(nombreDocente);
+            return ResponseEntity.ok(getDocente);
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error, inténtelo más tarde.");
+        }
+    }
+
+    
+
 
 }
