@@ -5,10 +5,9 @@ import com.example.Events.Domain.Service.IDocenteService;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.print.Doc;
 import java.util.List;
 
 @RestController
@@ -36,7 +35,17 @@ public class DocenteController {
                     .body("Error, intentelo más tarde");
         }
     }
-    
+
+    @GetMapping("/get/{id}")
+    public ResponseEntity<?> getById(@PathVariable int id){
+        try{
+            Docente getDocente = docenteService.obtenerDocente(id);
+            return ResponseEntity.ok(getDocente);
+        }catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error, inténtelo más tarde.");
+        }
+    }
 
 
 }
