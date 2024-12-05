@@ -75,8 +75,18 @@ public class DocenteController {
         }
     }
 
+    @PutMapping("/put/{id}")
+    public ResponseEntity<?> putDocente(@PathVariable int id, @RequestBody Docente docente){
+        try{
+            Docente putDocente = docenteService.actualizarDocente(id, docente);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Editado con éxito");
+        }
+        catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error" +
+                " inténtelo más tarde");
+        }
+    }
     
-
 
 
 }
