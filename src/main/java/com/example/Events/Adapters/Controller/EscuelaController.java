@@ -6,10 +6,7 @@ import com.example.Events.Domain.Service.IEscuelaService;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -49,5 +46,16 @@ public class EscuelaController {
                     .body("Error, inténtelo más tarde.");
         }
     }
-    
+
+    @GetMapping("/getByName")
+    public ResponseEntity<?> getByName(@RequestParam String nombreEscuela){
+        try{
+            List<Escuela> getEscuela = escuelaService.obtenerPorNombre(nombreEscuela);
+            return ResponseEntity.ok(getEscuela);
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error, inténtelo más tarde.");
+        }
+    }
 }
