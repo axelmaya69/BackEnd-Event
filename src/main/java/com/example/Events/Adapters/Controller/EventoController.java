@@ -73,4 +73,16 @@ public class EventoController {
                     " inténtelo más tarde");
         }
     }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteEvento(@PathVariable int id){
+        try{
+            eventoService.eliminarEvento(id);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Eliminado exitosamente");
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error" +
+                    " inténtelo más tarde.");
+        }
+    }
 }
