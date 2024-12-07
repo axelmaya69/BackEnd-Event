@@ -74,6 +74,17 @@ public class EscuelaController {
         }
     }
 
+    @PutMapping("/put/{id}")
+    public ResponseEntity<?> putEscuela(@PathVariable int id, @RequestBody Escuela escuela){
+        try{
+            Escuela putEscuela = escuelaService.actualizarEscuela(id, escuela);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Editado exitosamente");
+        }
+        catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error" +
+                    " inténtelo más tarde");
+        }
+    }
     
 
 }
