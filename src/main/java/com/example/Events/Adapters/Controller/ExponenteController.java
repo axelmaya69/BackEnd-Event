@@ -74,7 +74,17 @@ public class ExponenteController {
         }
     }
 
-
+    @PutMapping("/put/{id}")
+    public ResponseEntity<?> putExponenteMethod(@PathVariable int id, @RequestBody Exponente exponente){
+        try{
+            Exponente putExponente = exponenteService.actualizarExponente(id,exponente);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Editado exitosamente");
+        }
+        catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error" +
+                    " inténtelo más tarde");
+        }
+    }
 
 
 
