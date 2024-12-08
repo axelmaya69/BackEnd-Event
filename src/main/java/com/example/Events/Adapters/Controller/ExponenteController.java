@@ -86,6 +86,17 @@ public class ExponenteController {
         }
     }
 
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteMethod(@PathVariable int id){
+        try {
+            exponenteService.eliminarExponente(id);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Eliminado exitosamente");
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error" +
+                    " inténtelo más tarde.");
+        }
+    }
 
 
 }
