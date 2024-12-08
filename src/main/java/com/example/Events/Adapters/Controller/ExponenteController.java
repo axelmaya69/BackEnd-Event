@@ -6,9 +6,7 @@ import com.example.Events.Domain.Service.IExponenteService;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -35,6 +33,29 @@ public class ExponenteController {
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("Error, intentelo más tarde");
+        }
+    }
+
+    @GetMapping("/get/{id}")
+    public ResponseEntity<?> getById(@PathVariable int id){
+        try{
+            Exponente exponente = exponenteService.obtenerExponente(id);
+            return ResponseEntity.ok(exponente);
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error, inténtelo más tarde.");
+        }
+    }
+
+    @GetMapping("/getByName")
+    public ResponseEntity<?> getByName(@RequestParam String nombreExponente){
+        try{
+            List<Exponente> getExpByName = exponenteService.obtenerPorNombre(nombreExponente);
+            return ResponseEntity.ok(getExpByName);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error, inténtelo más tarde.");
         }
     }
 
