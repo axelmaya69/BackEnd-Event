@@ -74,6 +74,17 @@ public class InformacionController {
         }
     }
 
-    
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteInf(@PathVariable int id){
+       try{
+           informacionService.eliminarInformacion(id);
+           return ResponseEntity.status(HttpStatus.OK).body("Eliminado exitosamente");
+       }
+       catch (Exception e) {
+           return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error" +
+                   " inténtelo más tarde.");
+       }
+    }
+
 
 }
