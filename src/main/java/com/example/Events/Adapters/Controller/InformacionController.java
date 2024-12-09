@@ -62,5 +62,18 @@ public class InformacionController {
         }
     }
 
+    @PutMapping("/put/{id}")
+    public ResponseEntity<?> putInf(@PathVariable int id, @RequestBody Informacion informacion){
+        try{
+            Informacion putInformacion = informacionService.actualizarInformacion(id,informacion);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Editado con exito");
+        }
+        catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error" +
+                    " inténtelo más tarde");
+        }
+    }
+
     
+
 }
