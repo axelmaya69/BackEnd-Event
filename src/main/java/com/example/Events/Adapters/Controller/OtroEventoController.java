@@ -74,5 +74,16 @@ public class OtroEventoController {
         }
     }
 
+    @PutMapping("/put/{id}")
+    public ResponseEntity<?> putOtroEvento(@PathVariable int id, @RequestBody OtroEvento otroEvento){
+        try{
+            OtroEvento putOtroEvento = otroEventoService.actualizarOtroEvento(id, otroEvento);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Editado exitosamente");
+        }
+        catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error" +
+                    " inténtelo más tarde");
+        }
+    }
 
 }
