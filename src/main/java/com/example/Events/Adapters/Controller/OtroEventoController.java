@@ -3,6 +3,7 @@ package com.example.Events.Adapters.Controller;
 import com.example.Events.Domain.Model.OtroEvento;
 import com.example.Events.Domain.Service.IOtroEventoService;
 import org.springframework.dao.DataAccessException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -58,6 +59,20 @@ public class OtroEventoController {
                     .body("Error, inténtelo más tarde.");
         }
     }
-    
+
+    @PostMapping("/post")
+    public ResponseEntity<?> postOtroEv(@RequestBody OtroEvento otroEvento){
+        try{
+            OtroEvento postOtroEvento = otroEventoService.crearOtroEvento(otroEvento);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Creado exitosamente");
+        }
+        catch (DataIntegrityViolationException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("El registro ya existe!");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error" +
+                    " inténtelo más tarde");
+        }
+    }
+
 
 }
