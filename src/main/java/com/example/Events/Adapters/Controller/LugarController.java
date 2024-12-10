@@ -74,5 +74,18 @@ public class LugarController {
         }
     }
 
+    @PutMapping("/put/{id}")
+    public ResponseEntity<?> putLugar(@PathVariable int id,@RequestBody Lugar lugar){
+        try{
+            Lugar putLugar = lugarService.actualizarLugar(id,lugar);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Editado exitosamente");
+        }
+        catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error" +
+                    " inténtelo más tarde");
+        }
+    }
+
+    
 
 }
