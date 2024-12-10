@@ -86,4 +86,15 @@ public class OtroEventoController {
         }
     }
 
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteOtroEv(@PathVariable int id){
+        try{
+            otroEventoService.eliminarOtroEvento(id);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Eliminado con exito");
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error" +
+                    " inténtelo más tarde.");
+        }
+    }
 }
