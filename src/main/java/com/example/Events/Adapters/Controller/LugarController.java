@@ -86,6 +86,17 @@ public class LugarController {
         }
     }
 
-    
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteLugar(@PathVariable int id){
+        try{
+            lugarService.eliminarLugar(id);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Eliminado exitosamente");
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error" +
+                    " inténtelo más tarde.");
+        }
+    }
+
 
 }
