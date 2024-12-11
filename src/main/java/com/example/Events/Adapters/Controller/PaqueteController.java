@@ -75,6 +75,18 @@ public class PaqueteController {
                     " inténtelo más tarde");
         }
     }
-    
+
+    @PutMapping("/put/{id}")
+    public ResponseEntity<?> putPaquete(@PathVariable int id, @RequestBody Paquete paquete){
+        try{
+            Paquete putPaquete = paqueteService.actualizarPaquete(id,paquete);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Editado exitosamente");
+        }
+        catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error" +
+                    " inténtelo más tarde");
+        }
+    }
+
 
 }
