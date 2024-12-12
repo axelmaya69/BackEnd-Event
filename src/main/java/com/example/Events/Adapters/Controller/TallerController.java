@@ -5,10 +5,7 @@ import com.example.Events.Domain.Service.ITallerService;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -49,7 +46,17 @@ public class TallerController {
         }
     }
 
-    
+    @GetMapping("/getByName")
+    public ResponseEntity<?> getByName(@RequestParam String nombreTaller){
+        try{
+            List<Taller> getTallersByName = tallerService.obtenerPorNombre(nombreTaller);
+            return ResponseEntity.ok(getTallersByName);
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error, inténtelo más tarde.");
+        }
+    }
 
 
 
