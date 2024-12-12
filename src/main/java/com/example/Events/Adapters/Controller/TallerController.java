@@ -85,6 +85,18 @@ public class TallerController {
         }
     }
 
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteTaller(@PathVariable int id){
+        try{
+            tallerService.eliminarTaller(id);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Eliminado con exito");
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error" +
+                    " inténtelo más tarde.");
+        }
+    }
+
 
 
 }
