@@ -73,7 +73,17 @@ public class TallerController {
         }
     }
 
-    
+    @PutMapping("/put/{id}")
+    public ResponseEntity<?> putTaller(@PathVariable int id, @RequestBody Taller taller){
+        try{
+            Taller putTaller1 = tallerService.actualizarTaller(id,taller);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Editado exitosamente");
+        }
+        catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error" +
+                    " inténtelo más tarde");
+        }
+    }
 
 
 
