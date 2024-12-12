@@ -6,6 +6,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -35,6 +36,19 @@ public class TallerController {
                     .body("Error, intentelo más tarde");
         }
     }
+
+    @GetMapping("/get/{id}")
+    public ResponseEntity<?> getById(@PathVariable int id){
+        try{
+            Taller getTaller = tallerService.obtenerTaller(id);
+            return ResponseEntity.ok(getTaller);
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error, inténtelo más tarde.");
+        }
+    }
+
     
 
 
