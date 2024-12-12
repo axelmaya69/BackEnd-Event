@@ -22,7 +22,7 @@ public class AlumnoController {
         this.alumnoService = alumnoService;
     }
 
-    @GetMapping("get")
+    @GetMapping("/get")
     public ResponseEntity<?> getAll(){
         try {
             List<Alumno> getAlumnos = alumnoService.obtenerAlumnos();
