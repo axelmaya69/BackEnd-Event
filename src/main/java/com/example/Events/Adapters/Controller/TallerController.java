@@ -3,6 +3,7 @@ package com.example.Events.Adapters.Controller;
 import com.example.Events.Domain.Model.Taller;
 import com.example.Events.Domain.Service.ITallerService;
 import org.springframework.dao.DataAccessException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -58,7 +59,21 @@ public class TallerController {
         }
     }
 
+    @PostMapping("/post")
+    public ResponseEntity<?> postTaller(@RequestBody Taller taller){
+        try{
+            Taller postTaller = tallerService.crearTaller(taller);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Creado exitosamente");
+        }
+        catch (DataIntegrityViolationException e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("El registro ya existe!");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error" +
+                    " inténtelo más tarde");
+        }
+    }
 
+    
 
 
 
