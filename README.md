@@ -1,6 +1,4 @@
-modelar bien la bd para colocar bien las relaciones
-e igual con las notaciones
-ejemplificar con la del proyecto anterior subido aqui
+implementaciones a realizar;
 investigar como implementar jwt
 y un dockerizado
 bd con herencia de tablas
