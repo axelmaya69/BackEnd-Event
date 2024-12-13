@@ -1,4 +1,4 @@
-implementaciones a realizar;
-investigar como implementar jwt
+implementaciones a realizar:
+implementar jwt
 y un dockerizado
 bd con herencia de tablas
