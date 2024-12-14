@@ -15,7 +15,7 @@ public class JwtUtils {
     return Jwts.builder()
             .setSubject(usuario)
             .setIssuedAt(new Date())
-            .setExpiration(new Date(new Date().getTime())+)
+            .setExpiration(new Date(new Date().getTime()+ ${EXPIRATION_TIME}))
     }
 
 
