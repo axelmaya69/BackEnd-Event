@@ -16,6 +16,7 @@ public class JwtUtils {
             .setSubject(usuario)
             .setIssuedAt(new Date())
             .setExpiration(new Date(new Date().getTime()+ ${EXPIRATION_TIME}))
+        //investigar como agregar variables de entorno dentro deuna clase
     }
 
 
