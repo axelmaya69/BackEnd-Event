@@ -16,6 +16,7 @@ public class AluConfServiceImplementation implements IAlumnoConferenciaService {
 
     @Autowired
     public AluConfServiceImplementation(IAlumnoConferencia aluconfRep) {
+
         this.aluconfRep = aluconfRep;
     }
 
