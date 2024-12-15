@@ -11,10 +11,12 @@ import java.util.Date;
 @Component
 public class JwtUtils {
 
-
+    //Asi se integran variables de entorno dentro de una clase
     @Value("${EXPIRATION_TIME}")
     private String expiracion;
 
+
+    //Asi se integran variables de entorno dentro de una clase
     @Value("${SECRET_KEY}")
     private String llave;
 
