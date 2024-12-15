@@ -22,9 +22,18 @@ public class JwtFiltro extends OncePerRequestFilter {
     private UserDetailsService userDetailsService;
 
 
-
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+    protected void doFilterInternal(HttpServletRequest request,
+                                    HttpServletResponse response,
+                                    FilterChain filterChain)
+            throws ServletException, IOException {
 
+            String authHeader = request.getHeader("Authorization");
+            if(authHeader!= null && authHeader.startsWith("Bearer")){
+                String jwt = authHeader.substring(7);
+                if (jwtUtils.validateJWT(jwt)){
+                    String user = jwtUtils.getUserFromJWT(jwt);
+                }
+            }
     }
 }
