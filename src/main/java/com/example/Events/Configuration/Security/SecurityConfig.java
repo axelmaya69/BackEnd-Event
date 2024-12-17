@@ -26,6 +26,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests()
                 .requestMatchers("/blog/**").permitAll()
                 .anyRequest().authenticated()
+                .and()
+                .formLogin()
     }
 
     @Bean
