@@ -30,6 +30,7 @@ public class SecurityConfig {
                 .formLogin()
                 .loginPage("/login")
                 .permitAll()
+                .and()
     }
 
     @Bean
