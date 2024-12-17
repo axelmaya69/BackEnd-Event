@@ -28,6 +28,7 @@ public class SecurityConfig {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
+                .loginPage("/login")
     }
 
     @Bean
