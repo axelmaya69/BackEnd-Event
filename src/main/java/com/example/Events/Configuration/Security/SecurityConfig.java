@@ -22,16 +22,9 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf().disable()
+        http
                 .authorizeHttpRequests()
-                .requestMatchers("/auth/**").permitAll() // Endpoints públicos
-                .anyRequest().authenticated()
-                .and()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
-        http.addFilterBefore(jwtFiltro, UsernamePasswordAuthenticationFilter.class);
-
-        return http.build();
     }
 
     @Bean
