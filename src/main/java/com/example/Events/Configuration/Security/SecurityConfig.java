@@ -31,6 +31,8 @@ public class SecurityConfig {
                 .loginPage("/login")
                 .permitAll()
                 .and()
+                .rememberMe();
+        
     }
 
     @Bean
