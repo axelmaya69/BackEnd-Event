@@ -4,9 +4,11 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @Entity
@@ -65,9 +67,10 @@ public class Alumno implements UserDetails {
     @Setter
     private List<AlumnoTaller> alumnosTaller;
 
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
+        return Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER"));
     }
 
     @Override
@@ -79,5 +82,7 @@ public class Alumno implements UserDetails {
     public boolean isAccountNonExpired() {
         return UserDetails.super.isAccountNonExpired();
     }
+
+
 }
 
