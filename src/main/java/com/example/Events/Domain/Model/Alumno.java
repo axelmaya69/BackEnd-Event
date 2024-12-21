@@ -79,9 +79,16 @@ public class Alumno implements UserDetails {
     }
 
     @Override
+    public String getPassword() {
+        return this.password; // Usa tu campo de contraseña
+    }
+
+
+    @Override
     public boolean isAccountNonExpired() {
         return UserDetails.super.isAccountNonExpired();
     }
+
 
 
 }
