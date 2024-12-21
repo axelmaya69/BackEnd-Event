@@ -4,13 +4,16 @@ import com.example.Events.Domain.Model.Alumno;
 import com.example.Events.Domain.Repository.IAlumno;
 import com.example.Events.Domain.Service.IAlumnoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 
 @Service
-public class AlumnoServiceImplementation implements IAlumnoService {
+public class AlumnoServiceImplementation implements IAlumnoService, UserDetailsService {
 
 
     private final IAlumno aluRepo;
@@ -60,5 +63,11 @@ public class AlumnoServiceImplementation implements IAlumnoService {
     @Override
     public void eliminarAlumno(int id) {
     aluRepo.deleteById(id);
+    }
+
+    
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return null;
     }
 }
