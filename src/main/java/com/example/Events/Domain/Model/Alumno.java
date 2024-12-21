@@ -94,6 +94,11 @@ public class Alumno implements UserDetails {
         return true; // Cambia si quieres manejar bloqueo de cuentas
     }
 
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true; // Cambia si quieres manejar expiración de credenciales
+    }
+
 
 
 }
