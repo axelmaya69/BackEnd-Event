@@ -99,6 +99,11 @@ public class Alumno implements UserDetails {
         return true; // Cambia si quieres manejar expiración de credenciales
     }
 
+    @Override
+    public boolean isEnabled() {
+        return true; // Cambia si quieres manejar habilitación de cuentas
+    }
+
 
 
 }
