@@ -89,6 +89,11 @@ public class Alumno implements UserDetails {
         return UserDetails.super.isAccountNonExpired();
     }
 
+    @Override
+    public boolean isAccountNonLocked() {
+        return true; // Cambia si quieres manejar bloqueo de cuentas
+    }
+
 
 
 }
