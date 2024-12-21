@@ -3,11 +3,14 @@ package com.example.Events.Domain.Model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.Collection;
 import java.util.List;
 
 @Entity
-public class Alumno {
+public class Alumno implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Setter
@@ -62,5 +65,19 @@ public class Alumno {
     @Setter
     private List<AlumnoTaller> alumnosTaller;
 
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of();
+    }
+
+    @Override
+    public String getUsername() {
+        return "";
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return UserDetails.super.isAccountNonExpired();
+    }
 }
 
