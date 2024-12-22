@@ -10,4 +10,5 @@ import java.util.List;
 @Repository
 public interface IAlumno extends JpaRepository< Alumno, Integer> {
     List<Alumno> findByNombreContaining(String nombreAlumno);
+    Optional<Alumno> findByUsuario(String usuario);
 }
