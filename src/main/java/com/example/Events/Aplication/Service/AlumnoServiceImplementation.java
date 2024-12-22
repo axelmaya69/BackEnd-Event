@@ -69,4 +69,6 @@ public class AlumnoServiceImplementation implements IAlumnoService, UserDetailsS
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return alumnoRepository.findByUsuario(username)
+    }
 }
