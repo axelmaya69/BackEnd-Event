@@ -65,9 +65,8 @@ public class AlumnoServiceImplementation implements IAlumnoService, UserDetailsS
     aluRepo.deleteById(id);
     }
 
-    
+
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return null;
-    }
 }
