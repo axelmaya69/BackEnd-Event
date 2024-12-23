@@ -11,6 +11,5 @@ import java.util.Optional;
 @Repository
 public interface IAlumno extends JpaRepository< Alumno, Integer> {
     List<Alumno> findByNombreContaining(String nombreAlumno);
-    Optional<Alumno> findByUsuario(String usuario);
 }
 

@@ -3,17 +3,14 @@ package com.example.Events.Aplication.Service;
 import com.example.Events.Domain.Model.Alumno;
 import com.example.Events.Domain.Repository.IAlumno;
 import com.example.Events.Domain.Service.IAlumnoService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired; 
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 
 @Service
-public class AlumnoServiceImplementation implements IAlumnoService, UserDetailsService {
+public class AlumnoServiceImplementation implements IAlumnoService {
 
 
     private final IAlumno aluRepo;
@@ -47,7 +44,7 @@ public class AlumnoServiceImplementation implements IAlumnoService, UserDetailsS
     @Override
     public Alumno actualizarAlumno(int id, Alumno alumno) {
         Alumno updateAlumno = aluRepo.findById(id).get();
-        if(aluRepo.existsById(id)){
+        if (aluRepo.existsById(id)) {
             updateAlumno.setNombre(alumno.getNombre());
             updateAlumno.setApellidoP(alumno.getApellidoP());
             updateAlumno.setApellidoM(alumno.getApellidoM());
@@ -55,22 +52,16 @@ public class AlumnoServiceImplementation implements IAlumnoService, UserDetailsS
             updateAlumno.setUsuario(alumno.getUsuario());
             updateAlumno.setPassword(alumno.getPassword());
 
-        return aluRepo.save(updateAlumno);
+            return aluRepo.save(updateAlumno);
         }
         return null;
     }
 
     @Override
     public void eliminarAlumno(int id) {
-    aluRepo.deleteById(id);
+        aluRepo.deleteById(id);
     }
 
 
 
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return aluRepo.findByUsuario(username)
-                .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado: " + username));
-
-    }
 }
