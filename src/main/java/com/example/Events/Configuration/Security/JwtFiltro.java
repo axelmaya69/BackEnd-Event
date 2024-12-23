@@ -42,7 +42,7 @@ public class JwtFiltro extends OncePerRequestFilter {
                 UserDetails alumno = userDetailsService.loadUserByUsername(username);
 
                 UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
-                        alumno, null, userDetails.getAuthorities());
+                        alumno, null, alumno.getAuthorities());
 
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }
