@@ -24,6 +24,7 @@ public class JwtFiltro extends OncePerRequestFilter {
     @Autowired
     private UserDetailsService userDetailsService;
 
+    @Autowired
     private IAlumnoService alumnoService;
 
 
