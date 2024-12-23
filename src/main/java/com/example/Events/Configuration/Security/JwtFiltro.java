@@ -1,5 +1,6 @@
 package com.example.Events.Configuration.Security;
 
+import com.example.Events.Domain.Service.IAlumnoService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -22,6 +23,8 @@ public class JwtFiltro extends OncePerRequestFilter {
 
     @Autowired
     private UserDetailsService userDetailsService;
+
+    private IAlumnoService alumnoService;
 
 
     @Override
