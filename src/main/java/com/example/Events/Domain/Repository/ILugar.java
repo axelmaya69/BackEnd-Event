@@ -9,5 +9,6 @@ import java.util.List;
 
 @Repository
 public interface ILugar extends JpaRepository< Lugar, Integer> {
+    
     List<Lugar> findByLugarContaining(String nombreLugar);
 }

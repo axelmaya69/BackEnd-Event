@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface IExponente extends JpaRepository< Exponente , Integer> {
-    
+
     List<Exponente> findByNombreContaining(String nombreExponente);
 }
