@@ -8,5 +8,6 @@ import java.util.List;
 
 @Repository
 public interface IAdministrador extends JpaRepository<Administrador,Integer > {
+
     List<Administrador> findByNombreContaining(String nombreAdministrador);
 }
