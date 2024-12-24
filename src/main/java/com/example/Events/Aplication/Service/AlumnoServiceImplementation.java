@@ -3,7 +3,7 @@ package com.example.Events.Aplication.Service;
 import com.example.Events.Domain.Model.Alumno;
 import com.example.Events.Domain.Repository.IAlumno;
 import com.example.Events.Domain.Service.IAlumnoService;
-import org.springframework.beans.factory.annotation.Autowired; 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,7 +11,6 @@ import java.util.List;
 
 @Service
 public class AlumnoServiceImplementation implements IAlumnoService {
-
 
     private final IAlumno aluRepo;
 
