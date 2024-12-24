@@ -22,6 +22,9 @@ public abstract class APersona {
     @Setter
     String apellidoP;
 
+
+    @Getter
+    @Setter
     String apellidoM;
 
 
