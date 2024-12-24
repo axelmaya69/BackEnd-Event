@@ -9,30 +9,12 @@ import java.util.Collections;
 import java.util.List;
 
 @Entity
-public class Alumno  {
+public class Alumno  extends  APersona{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Setter
     @Getter
     private int id;
-
-    @Getter
-    @Setter
-    private String nombre;
-
-    @Getter
-    @Setter
-    private String apellidoP;
-
-    @Getter
-    @Setter
-    private String apellidoM;
-
-
-    @Getter
-    @Setter
-    @Column(unique = true)
-    private String numeroDeControl;
 
     @Getter
     @Setter

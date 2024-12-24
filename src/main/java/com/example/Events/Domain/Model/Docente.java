@@ -7,30 +7,13 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-public class Docente {
+public class Docente extends APersona {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO )
     @Setter
     @Getter
     private int id;
-
-    @Getter
-    @Setter
-    private String nombre;
-
-    @Getter
-    @Setter
-    private String apellidoP;
-
-    @Getter
-    @Setter
-    private String apellidoM;
-
-    @Getter
-    @Setter
-    @Column(unique = true)
-    private String numeroControl;
 
     @Getter
     @Setter
