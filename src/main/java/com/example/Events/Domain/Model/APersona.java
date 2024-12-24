@@ -14,6 +14,8 @@ public abstract class APersona {
     @Setter
     int id;
 
+    @Getter
+    @Setter
     String nombre;
 
     String apellidoP;
