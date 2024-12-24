@@ -9,5 +9,6 @@ import java.util.List;
 
 @Repository
 public interface IAlumnoConferencia extends JpaRepository<AlumnoConferencia, Integer> {
-    //List<AlumnoConferencia> findAlumnoConferencia(String alumnoConferencia);
+
+
 }
