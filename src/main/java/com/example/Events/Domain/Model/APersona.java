@@ -18,6 +18,8 @@ public abstract class APersona {
     @Setter
     String nombre;
 
+    @Getter
+    @Setter
     String apellidoP;
 
     String apellidoM;
