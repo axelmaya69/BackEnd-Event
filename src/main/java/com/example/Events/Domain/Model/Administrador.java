@@ -5,21 +5,12 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
-public class Administrador {
+public class Administrador extends APersona{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Getter
-    @Setter
-    private int id;
-
-    @Getter
-    @Setter
-    private String rol;
-
-    @Getter
-    @Setter
-    @Column(unique = true)
-    private String nombre;
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<Rol> roles = new ArrayList<>();
 }
