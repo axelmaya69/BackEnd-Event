@@ -46,7 +46,7 @@ public class DocenteServiceImplementation implements IDocenteService {
             updateDocente.setNombre(docente.getNombre());
             updateDocente.setApellidoM(docente.getApellidoM());
             updateDocente.setApellidoP(docente.getApellidoP());
-            updateDocente.setNumeroControl(docente.getNumeroControl());
+            updateDocente.setNumeroDeControl(docente.getNumeroDeControl());
             updateDocente.setUsuario(docente.getUsuario());
             updateDocente.setPassword(docente.getPassword());
             return docenteRep.save(updateDocente);
