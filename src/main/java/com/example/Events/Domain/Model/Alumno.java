@@ -10,20 +10,8 @@ import java.util.List;
 
 @Entity
 public class Alumno  extends  APersona{
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Setter
-    @Getter
-    private int id;
 
-    @Getter
-    @Setter
-    @Column(unique = true)
-    private String usuario;
 
-    @Getter
-    @Setter
-    private String password;
 
 
     @OneToOne
