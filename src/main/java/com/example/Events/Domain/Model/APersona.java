@@ -1,20 +1,20 @@
 package com.example.Events.Domain.Model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
+import java.util.ArrayList;
+import java.util.List;
+
+@MappedSuperclass //
 public abstract class APersona {
 
     @Id
     @Getter
     @Setter
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
     @Getter
@@ -34,5 +34,17 @@ public abstract class APersona {
     @Setter
     String numeroDeControl;
 
+    @Getter
+    @Setter
+    @Column(unique = true)
+    private String usuario;
 
+    @Getter
+    @Setter
+    private String password;
+
+    @Getter
+    @Setter
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<Rol> roles = new ArrayList<>(); // Relación dinámica con roles
 }
