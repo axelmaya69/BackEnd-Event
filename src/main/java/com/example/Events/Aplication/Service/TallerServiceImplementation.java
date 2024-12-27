@@ -47,7 +47,7 @@ public class TallerServiceImplementation implements ITallerService {
             updateTaller.setExponente(taller.getExponente());
             updateTaller.setPaquete(taller.getPaquete());
             updateTaller.setLugar(taller.getLugar());
-            updateTaller.setInformacion(taller.getInformacion()); 
+            updateTaller.setInformacion(taller.getInformacion());
             return tallerRep.save(updateTaller);
         }
         return null;
