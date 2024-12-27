@@ -49,6 +49,7 @@ public class DocenteServiceImplementation implements IDocenteService {
             updateDocente.setNumeroDeControl(docente.getNumeroDeControl());
             updateDocente.setUsuario(docente.getUsuario());
             updateDocente.setPassword(docente.getPassword());
+
             return docenteRep.save(updateDocente);
         }
         return null;
