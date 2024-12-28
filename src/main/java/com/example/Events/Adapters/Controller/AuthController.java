@@ -27,7 +27,7 @@ public class AuthController {
     }
 
     @PostMapping("/refresh")
-    public TokenResponse refreshToken(@RequestHeader(HttpHeaders.AUTHORIZATION)){
+    public TokenResponse refreshToken(@RequestHeader(HttpHeaders.AUTHORIZATION) final String authHeader){
         return service.refreshToken(authHeader);
     }
 }
