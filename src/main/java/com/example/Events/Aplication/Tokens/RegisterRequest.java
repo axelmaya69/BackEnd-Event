@@ -1,4 +1,7 @@
 package com.example.Events.Aplication.Tokens;
 
-public record RegisterRequest {
+public record RegisterRequest(
+    String usuario;
+
+) {
 }
