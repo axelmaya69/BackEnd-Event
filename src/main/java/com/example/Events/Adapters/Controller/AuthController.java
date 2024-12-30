@@ -1,7 +1,6 @@
 package com.example.Events.Adapters.Controller;
 
 
-import com.example.Events.Aplication.Tokens.RegisterRequest;
 import com.example.Events.Aplication.Tokens.TokenResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
